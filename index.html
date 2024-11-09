@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌈</text></svg>">
+  <title>Color Wave</title>
+</head>
+
+<body>
+  <div
+    style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-bottom: 20px">
+    <div>
+      <label for="imageInput">Selecionar Imagem</label>
+      <input type="file" name="imgFile" id="imageInput" accept="image/*">
+    </div>
+    <div id="imgCanvas"></div>
+    <div id="desmos" style="height: 400px; margin-top: 20px;"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+  <script src="index.js"></script>
+  <script>
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti()
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key?.toLowerCase() == 'c') {
+        jsConfetti.addConfetti()
+      }
+    })
+  </script>
+</body>
+
+</html>
